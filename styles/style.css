@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#menu{
+    background-color: rgb(79, 207, 154);
+    display: flex;
+    justify-content: flex-end;
+
+   
+}
+#opti{
+    padding: 5vh;
+    display: flex;
+    align-items: end;
+}
+#log{
+    padding-left: 5vh;
+    font-size: xx-large;
+}
