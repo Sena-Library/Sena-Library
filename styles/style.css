@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*HEADER*/
+header{
+    height: 130px;
+}
+#menu{
+    background-color: rgb(72, 194, 143);
+    display: flex;
+    justify-content:space-between;
+    color: white;
+   
+}
+#opti{
+    padding-bottom: 40px;
+    display: flex;
+    align-items: end;
+}
+#log{
+    padding-right: 50px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    padding-bottom: 20px;
+}
+#searchh{
+    height: 4vh;
+    margin-right: 3vh;
+    border-radius: 10px;
+    border: none;
+}
+.logo_sena{
+    height: 140px;
+    padding: 20px;
+    padding-left: 60px;
+}
+#carrusel{
+    height: 700px;
+}
+/*MAIN*/
+
+#carouselExampleIndicators{
+    height:700px;
+}
+
+img{
+    height: 450px;
+}
+.section-principal{
+    display: flex;
+}
+.checkboxes{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding: 10px;
+}
+.section-checkbox{
+    display: flex;
+    margin-top: 30px;
+}
+.boton_check{
+    width: 340px;
+    margin-left: 10px;
+    background-color:rgb(72, 194, 143) ;
+    border-radius: 10px;
+    height: 30px;
+    border: none;
+}
+.section_select{
+    display: flex;
+}
+/*FOOTER*/
+footer{
+    background-color:rgb(72, 194, 143) ;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    height: 60px;
+}
+
