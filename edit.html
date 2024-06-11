@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Book</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Book</h1>
+    <form id="edit-book-form">
+        <label for="tittle">Title</label>
+        <input type="text" id="tittle" name="tittle">
+
+        <label for="author">Author</label>
+        <input type="text" id="author" name="author">
+
+        <label for="genre">Genre</label>
+        <input type="text" id="genre" name="genre">
+
+        <label for="idiom">Idiom</label>
+        <input type="text" id="idiom" name="idiom">
+
+        <label for="price">Price</label>
+        <input type="number" id="price" name="price">
+
+        <label for="format">Format</label>
+        <input type="text" id="format" name="format">
+
+        <label for="isbn">ISBN</label>
+        <input type="text" id="isbn" name="isbn">
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description"></textarea>
+
+        <label for="state">State</label>
+        <input type="text" id="state" name="state">
+
+        <label for="ubication">Ubication</label>
+        <input type="text" id="ubication" name="ubication">
+
+        <label for="publicationDate">Publication Date</label>
+        <input type="date" id="publicationDate" name="publicationDate">
+
+        <label for="editorial">Editorial</label>
+        <input type="text" id="editorial" name="editorial">
+
+        <label for="pages">Pages</label>
+        <input type="text" id="pages" name="pages">
+
+        <button type="submit">Save</button>
+    </form>
+
+    <script>
+        const books = JSON.parse(localStorage.getItem('books')) || [
+            { tittle: 'Antes de diciembre', author: 'Joana Marcus', genre: 'Juvenil', idiom: 'Castellano', price: 52249, format: 'Tapa blanda', isbn: '9788413145204', description: 'Una historia de amor y pasión con una cuenta atrás. Todo acabará Antes de diciembre.', state: 'No disponible', ubication: 'España', publicationDate: '11/11/2021', editorial: 'MONTENA', pages: '689' },
+            { tittle: 'Boulevard', author: 'Flor Salvador', genre: 'Juvenil', idiom: 'Castellano', price: 75999, format: 'Tapa blanda', isbn: '9788419169181', description: 'Luke Howland, lleno de problemas y sumido en una desesperación profunda, y Hasley Weigel, tan despistada como optimista, no se ajustan al prototipo de pareja perfecta.', state: 'Disponible', ubication: 'España', publicationDate: '24/02/2022', editorial: 'MONTENA', pages: '360' },
+            
+        ];
+
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        const bookIndex = getQueryParam('index');
+        const book = books[bookIndex];
+
+        document.getElementById('tittle').value = book.tittle;
+        document.getElementById('author').value = book.author;
+        document.getElementById('genre').value = book.genre;
+        document.getElementById('idiom').value = book.idiom;
+        document.getElementById('price').value = book.price;
+        document.getElementById('format').value = book.format;
+        document.getElementById('isbn').value = book.isbn;
+        document.getElementById('description').value = book.description;
+        document.getElementById('state').value = book.state;
+        document.getElementById('ubication').value = book.ubication;
+        document.getElementById('publicationDate').value = book.publicationDate;
+        document.getElementById('editorial').value = book.editorial;
+        document.getElementById('pages').value = book.pages;
+
+        document.getElementById('edit-book-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            book.tittle = document.getElementById('tittle').value;
+            book.author = document.getElementById('author').value;
+            book.genre = document.getElementById('genre').value;
+            book.idiom = document.getElementById('idiom').value;
+            book.price = document.getElementById('price').value;
+            book.format = document.getElementById('format').value;
+            book.isbn = document.getElementById('isbn').value;
+            book.description = document.getElementById('description').value;
+            book.state = document.getElementById('state').value;
+            book.ubication = document.getElementById('ubication').value;
+            book.publicationDate = document.getElementById('publicationDate').value;
+            book.editorial = document.getElementById('editorial').value;
+            book.pages = document.getElementById('pages').value;
+
+            books[bookIndex] = book;
+            localStorage.setItem('books', JSON.stringify(books));
+
+            alert('Book updated successfully!');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
