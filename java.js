@@ -65,9 +65,12 @@ filterone.forEach((e) => {
         if (e.value === 'price') {
             // Aplicar filtro por precio
             filteredBooks = books.filter(value => value.price >= 30000 && value.price <= 80000);
-        } else if (e.value === 'idiom') {
+        } else if (e.value === 'ing') {
             // Aplicar filtro por idioma
             filteredBooks = books.filter(value => value.idiom === 'Ingles');
+        }else if (e.value === 'esp') {
+            // Aplicar filtro por idioma
+            filteredBooks = books.filter(value => value.idiom === 'Castellano');
         }
     }
 });
@@ -76,6 +79,175 @@ console.log(filteredBooks);
 
 
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filtro = document.getElementById('filtro');
+    
+
+
+    filtro.addEventListener('change', () => {
+        const categoria = filtro.value;
+
+            if (categoria === 'todos') {
+                console.log(books)
+            } else if(categoria ==='Mario_Ramos') {
+                const filterAuthorMarioRamos = books.filter (value => value.author == 'Mario Ramos')
+                console.log(filterAuthorMarioRamos)
+
+            } else if(categoria ==='James_Clear') {
+                const filterAuthorJamesClear = books.filter (value => value.author == 'James Clear');
+                console.log(filterAuthorJamesClear)
+
+            } else if(categoria ==='Robin_Sharma') {
+                const filterAuthorRobinSharma = books.filter (value => value.author == 'Robin Sharma');
+                console.log(filterAuthorRobinSharma)
+
+            } else if(categoria ==='Mario_Mendoza') {
+                const filterAuthorMarioMendoza = books.filter (value => value.author == 'Mario Mendoza');
+                console.log(filterAuthorMarioMendoza)
+
+            } else if(categoria ==='Isabel_Allende') {
+                const filterAuthorIsabelAllende = books.filter (value => value.author == 'Isabel Allende');
+                console.log(filterAuthorIsabelAllende)
+
+            } else if(categoria ==='Eckhart_Tolle') {
+                const filterAuthorEckhartTolle = books.filter (value => value.author == 'Eckhart Tolle');
+                console.log(filterAuthorEckhartTolle)
+
+            } else if(categoria ==='Carlos_Jaramillo') {
+                const filterAuthorCarlosJaramillo = books.filter (value => value.author == 'Carlos Jaramillo');
+                console.log(filterAuthorCarlosJaramillo)
+
+            } else if(categoria ==='Marian_Rojas') {
+                const filterAuthorMarianRojas = books.filter (value => value.author == 'Marian Rojas');
+                console.log(filterAuthorMarianRojas)
+
+            } else if(categoria ==='Irene_Vallejo') {
+                const filterAuthorIreneVallejo = books.filter (value => value.author == 'Irene Vallejo');
+                console.log(filterAuthorIreneVallejo)
+
+            } else if(categoria ==='Miguel_Ruiz') {
+                const filterAuthorMiguelRuiz = books.filter (value => value.author == 'Miguel Ruiz');
+                console.log(filterAuthorMiguelRuiz)
+
+            } else if(categoria ==='Gustavo_Petro') {
+                const filterAuthorFlorSalvador = books.filter (value => value.author == 'Flor Salvador');
+                console.log(filterAuthorFlorSalvador)
+
+            } else if(categoria ==='Flor_Salvador') {
+                const filterAuthorFlorSalvador = books.filter (value => value.author == 'Flor Salvador');
+                console.log(filterAuthorFlorSalvador)
+
+            } else if(categoria ==='Joana_Marcus') {
+                const filterAuthorJoanaMarcus = books.filter (value => value.author == 'Joana Marcus');
+                console.log(filterAuthorJoanaMarcus)
+
+            } else if(categoria ==='J.K._Rowlling') {
+                const filterAuthorJKRowlling = books.filter (value => value.author == 'J.K. Rowlling');
+                console.log(filterAuthorJKRowlling)
+
+            } else if(categoria ==='Hector_Abad_Faciolince') {
+                const filterAuthorHéctorAbad = books.filter (value => value.author == 'Héctor Abad Faciolince');
+                console.log(filterAuthorHéctorAbad)
+
+            } else if(categoria ==='Edgar_Allan_Poe') {
+                const filterAuthorEdgarAllan = books.filter (value => value.author == 'Edgar Allan Poe');
+                console.log(filterAuthorEdgarAllan)
+
+            } else if(categoria ==='Antoine_de_Saint_Exupéry') {
+                const filterAuthorAntoinedeSaint = books.filter (value => value.author == 'Antoine de Saint Exupéry');
+                console.log(filterAuthorAntoinedeSaint)
+
+            } else if(categoria ==='Santiago_Posteguillo') {
+                const filterAuthorSantiagoPosteguillo= books.filter (value => value.author == 'Santiago Posteguillo');
+                console.log(filterAuthorSantiagoPosteguillo)
+
+            } else if(categoria ==='Dale_Carnegie') {
+                const filterAuthorDaleCarnegie = books.filter (value => value.author == 'Dale Carnegie');
+                console.log(filterAuthorDaleCarnegie)
+
+            } 
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filtrotwo = document.getElementById('filtrotwo');
+
+
+    filtrotwo.addEventListener('change', () => {
+        const categoriatwo = filtrotwo.value;
+
+            if (categoriatwo === 'todosE') {
+                console.log(books)
+            } else if(categoriatwo ==='B_de_Bolsillo') {
+                const filterEditorialBolsillo = books.filter (value => value.editorial == 'B de Bolsillo');
+                console.log(filterEditorialBolsillo)
+
+            } else if(categoriatwo ==='Editorial_Alma') {
+                const filterEditorialAlma = books.filter (value => value.editorial == 'Editorial Alma');
+                console.log(filterEditorialAlma)
+
+            } else if(categoriatwo ==='ALFAGUARA') {
+                const filterEditorialALFAGUARA = books.filter (value => value.editorial == 'ALFAGUARA');
+                console.log(filterEditorialALFAGUARA)
+
+            } else if(categoriatwo ==='Salamandra') {
+                const filterEditorialSalamandra = books.filter (value => value.editorial == 'Salamandra');
+                console.log(filterEditorialSalamandra)
+
+            } else if(categoriatwo ==='MONTENA') {
+                const filterEditorialMONTENA = books.filter (value => value.editorial == 'MONTENA');
+                console.log(filterEditorialMONTENA)
+
+            } else if(categoriatwo ==='Urano') {
+                const filterEditorialUrano = books.filter (value => value.editorial == 'Urano');
+                console.log(filterEditorialUrano)
+
+            } else if(categoriatwo ==='Espasa') {
+                const filterEditorialEspasa = books.filter (value => value.editorial == 'Espasa');
+                console.log(filterEditorialEspasa)
+
+            } else if(categoriatwo ==='Booket') {
+                const filterEditorialBooket  = books.filter (value => value.editorial == 'Booket');
+                console.log(filterEditorialBooket)
+
+            } else if(categoriatwo ==='LIBRERÍA_Y_DISTRIBUIDORA_LERNER_SAS') {
+                const filterEditorialLERNER  = books.filter (value => value.editorial == 'LIBRERÍA Y DISTRIBUIDORA LERNER SAS');
+                console.log(filterEditorialLERNER)
+
+            } else if(categoriatwo ==='Gaia_Ediciones') {
+                const filterEditorialGaia = books.filter (value => value.editorial == 'Gaia Ediciones');
+                console.log(filterEditorialGaia)
+
+            } else if(categoriatwo ==='Ballantine_Books') {
+                const filterEditorialBallantineBooks = books.filter (value => value.editorial == 'Ballantine Books');
+                console.log(filterEditorialBallantineBooks)
+
+            } else if(categoriatwo ==='Planeta_Colombia') {
+                const filterEditorialPlanetaColombia = books.filter (value => value.editorial == 'Planeta Colombia');
+                console.log(filterEditorialPlanetaColombia)
+
+            } else if(categoriatwo ==='GRIJALBO') {
+                const filterEditorialGRIJALBO = books.filter (value => value.editorial == 'GRIJALBO');
+                console.log(filterEditorialGRIJALBO)
+
+            } else if(categoriatwo ==='PAIDOS') {
+                const filterEditorialPaidos = books.filter (value => value.editorial == 'PAIDOS');
+                console.log(filterEditorialPaidos)
+
+            } else if(categoriatwo ==='Editorial_Corimbo_S.L') {
+                const filterEditorialCorimbo = books.filter (value => value.editorial == 'Editorial Corimbo S.L.');
+                console.log(filterEditorialCorimbo)
+
+            } 
+    });
+});
+
+
+
+
 
 
 
