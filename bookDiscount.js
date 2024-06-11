@@ -94,7 +94,7 @@ let books = [
       author: 'Robin Sharma',
       genre: 'Autoayuda',
       idiom: 'Castellano',
-      price: 45,
+      price: 45000,
       format: 'Pasta blanda',
       isbn: '9789585464421',
       description: 'El Club de las 5 de la mañana es la innovadora e increíble historia de dos personas que desean mejorar la productividad, la prosperidad y la serenidad en esta época de distracciones digitales y de abrumadora complejidad, y conocen a un magnate extraño pero fantástico.',
@@ -301,26 +301,31 @@ let books = [
     }
   ]
 
-  let prices = books.price.slice(5)
- console.log(prices)
+  // FECHA ACTUAL
+  let currentDate = new Date();
+  let currentDay = currentDate.getDate();
+  let currentMonth = currentDate.getMonth() + 1; 
   
-//  var date = new Date();
+// FECHA DIA DEL LIBRO 1
+  let discountDay = 11;
+  let discountMonth = 9;
 
-//  var date1 = new Date("06/7/2024");
+// FECHA DIA DEL LIBRO 2
 
-//  var date2 = new Date("12/7/2024");
+let discountDay2 = 11
+let discountMonth2 = 6
 
-//  var date2 = date.getDate();
-//  var date2_2 = date.getMonth();
+  function discountB(bbooks){
+    // Aplicar el descuento si la fecha coincide
+    if (currentDay === discountDay && currentMonth === discountMonth || currentDay === discountDay2 & currentMonth === discountMonth2) {
+     return bbooks.filter(book =>  book.price = book.price * 0.9) ;
+    }
+  }
 
-//  var bookDay = date1.getDate()
-//  var bookDay1 = date1.getMonth()
+  console.log(discountB(books))
 
 
-//  if(date2 === bookDay && date2_2 === bookDay1){
- 
 
-// }   
 
 
 
