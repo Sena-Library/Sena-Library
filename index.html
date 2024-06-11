@@ -13,13 +13,20 @@
             <div>
                 <img src="assets/sena.png" alt="" class="logo_sena">
             </div>
-            <div id="opti">  
-            <a href="" id="log">Login</a>
-            <a href="" id="log">Editar</a>
-            <div>
-                <h3>Buscador</h3>
-                <input type="search"  id="searchh">
+            <div class="title">
+                <h1>
+                    LIBRERIA SENA
+                </h1>
             </div>
+            <div id="opti">
+                <div class="opciones_links">
+                    <a href="templates/register.html" id="log">Register</a>
+                    <a href="templates/add.html" id="log">Agregar</a>
+                    <a href="templates/modify.html" id="log">Editar</a>
+                </div>  
+                <div>
+                    <input type="search"  id="searchh" placeholder="Buscador">
+                </div>
             </div>  
         </nav>
     </header>
@@ -56,116 +63,81 @@
 <section class="section-principal">
     <section >
         <section class="section-checkbox">
-            <div class="checkboxes">
-                <h2>GENEROS</h2>
+          <div class="checkboxes">
+                <h2 class="subtitles">IDIOMA</h2>
                 <div>
-                    pepe
+                    Español
                     <input type="checkbox" name="" id="">
                 </div>
                 <div>
-                    pepe
+                    Ingles
                     <input type="checkbox" name="" id="">
                 </div>
-                <div>
-                    pepe
-                    <input type="checkbox" name="" id="">
-                </div>
-                <div>
-                    pepe
-                    <input type="checkbox" name="" id="">
-                </div>
-                <div>
-                    pepe
-                    <input type="checkbox" name="" id="">
-                </div>
-                <div>
-                    pepe
-                    <input type="checkbox" name="" id="">
-                </div>
-            </div>
-            
-            <div class="checkboxes">
-                <h2>IDIOMA</h2>
-                <div>
-                    pepe
-                    <input type="checkbox" name="" id="">
-                </div>
-                <div>
-                    pepe
-                    <input type="checkbox" name="" id="">
-                </div>
-                <div>
-                    pepe
-                    <input type="checkbox" name="" id="">
-                </div>
-                <div>
-                    pepe
-                    <input type="checkbox" name="" id="">
-                </div>
-                <div>
-                    pepe
-                    <input type="checkbox" name="" id="">
-                </div>
-                <div>
-                    pepe
-                    <input type="checkbox" name="" id="">
-                </div>
+                
        </div>
+            
+       <div class="checkboxes">
+        <h2 class="subtitles">DISPONIBILIDAD</h2>
+        <div>
+            Disponible
+            <input type="checkbox" name="" id="">
+        </div>
+        <div>
+            No Disponible
+            <input type="checkbox" name="" id="">
+        </div>
+        
+</div>
+            
 
                 
                
         </section>
     <section class="section_select">
-        <div>
-            <select name="" id="">
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-            </select>
+        <div class="options">
+        <h2 class="subtitles">AUTORES</h2>
+
+        <select id="filtro">
+            <option value="todos">Todos</option>
+            <option value="Mario_Ramos">Mario Ramos</option>
+            <option value="James_Clear">James Clear</option>
+            <option value="Robin_Sharma">Robin Sharma</option> 
+            <option value="Mario_Mendoza">Mario Mendoza</option> 
+            <option value="Isabel_Allende">Isabel Allende</option> 
+            <option value="Eckhart_Tolle">Eckhart Tolle</option> 
+            <option value="Carlos_Jaramillo">Carlos Jaramillo</option> 
+            <option value="Marian_Rojas">Marian Rojas</option> 
+            <option value="Irene_Vallejo">Irene Vallejo</option> 
+            <option value="Miguel_Ruiz">Miguel Ruiz</option> 
+            <option value="Gustavo_Petro">Gustavo Petro</option>
+            <option value="Flor_Salvador">Flor Salvador</option>
+            <option value="Joana_Marcus">Joana Marcus</option>
+            <option value="J.K._Rowlling">J.K. Rowlling</option>
+            <option value="Hector_Abad_Faciolince">Héctor Abad Faciolince</option>
+            <option value="Edgar_Allan_Poe">Edgar Allan Poe</option>
+            <option value="Antoine_de_Saint_Exupéry">Antoine de Saint Exupéry</option>
+            <option value="Santiago_Posteguillo">Santiago Posteguillo</option>
+            <option value="Dale_Carnegie">Dale Carnegie</option>
+        </select>
         </div>
         <div>
+        <h2 class="subtitles">GENEROS</h2>
             <select name="" id="">
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
-                <option value="">2</option>
+                <option value=""></option>
+                <option value="">Infantil</option>
+                <option value="">Autoayuda</option>
+                <option value="">Historia</option>
+                <option value="">Ficción</option>
+                <option value="">Salud</option>
+                <option value="">Filología</option>
+                <option value="">Juvenil</option>
+                <option value="">Novela contemporánea</option>
+                <option value="">Fantasía</option>
+                <option value="">Terror</option>
             </select>
         </div>
     </section>
-    <button class="boton_check">PEPE</button>
+    <button class="boton_check">Buscar</button>
 
 
     </section>

@@ -6,6 +6,7 @@
 header{
     height: 130px;
 }
+
 #menu{
     background-color: rgb(72, 194, 143);
     display: flex;
@@ -14,22 +15,22 @@ header{
    
 }
 #opti{
-    padding-bottom: 40px;
     display: flex;
-    align-items: end;
+    align-items: center;
 }
+
 #log{
-    padding-right: 50px;
+    padding-right: 30px;
     font-size: 20px;
     text-decoration: none;
     color: white;
-    padding-bottom: 20px;
 }
 #searchh{
     height: 4vh;
     margin-right: 3vh;
     border-radius: 10px;
     border: none;
+    padding-left: 100px;
 }
 .logo_sena{
     height: 140px;
@@ -38,6 +39,11 @@ header{
 }
 #carrusel{
     height: 700px;
+}
+.title{
+    display:flex ;
+    align-items: center;
+    padding-right: 800px;
 }
 /*MAIN*/
 
@@ -54,8 +60,9 @@ img{
 .checkboxes{
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 190px;
     padding: 10px;
+    align-items: center;
 }
 .section-checkbox{
     display: flex;
@@ -63,14 +70,111 @@ img{
 }
 .boton_check{
     width: 340px;
-    margin-left: 10px;
+    margin-left: 30px;
+    margin-top: 10px;
     background-color:rgb(72, 194, 143) ;
     border-radius: 10px;
     height: 30px;
     border: none;
+    display: flex;
+   justify-content: center;
 }
 .section_select{
     display: flex;
+    justify-content: space-around;
+}
+.subtitles{
+    font-size: 30px;
+    font-weight: 100;
+}
+select{
+width: 140px;
+}
+/*AGREGAR*/
+.add-h3{
+    font-size: 20PX;
+    font-weight: 400;
+}
+.add-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;   
+    height: 703px;
+}
+.inputs-register{
+    width: 400px;
+    height: 35px;
+    border-radius: 20px;
+    border: solid 1px #979696;
+    text-align: center;
+}
+
+input:focus{
+    border: 3px solid #979696;
+    outline: none;
+}
+.A-G{
+    display: flex;
+    padding: 50px;
+}
+.boton-agregar{
+    display: flex;
+    align-items: center;
+}
+.boton_check2{
+    width: 340px;
+    background-color:rgb(72, 194, 143) ;
+    border-radius: 15px;
+    height: 40px;
+    border: none;
+    
+}
+.div-boton2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imagen_agregar{
+    padding-top: 20px;
+}
+/*EDITAR*/
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+label {
+    display: block;
+    margin-top: 10px;
+}
+textarea{
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+.inputs_editar{
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+.save_boton{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.save_boton:hover {
+    background-color: #0056b3;
+}
+.edit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 /*FOOTER*/
 footer{
