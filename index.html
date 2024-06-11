@@ -3,19 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Books List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .book-list {
+            list-style: none;
+            padding: 0;
+        }
+        .book-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .book-item h2 {
+            margin: 0 0 5px;
+            font-size: 18px;
+        }
+        .edit-button {
+            margin-top: 5px;
+            padding: 5px 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .edit-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <a href="">Login</a>
-        <a href="">Editar</a>
-        <input type="search" name="" id="search">
-        <select class="form-select" id="filt">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-    </nav>
+    <h1>Books List</h1>
+    <ul id="book-list" class="book-list"></ul>
+
+    <script>
+        const books = JSON.parse(localStorage.getItem('books')) || [
+            { tittle: 'Antes de diciembre', author: 'Joana Marcus', genre: 'Juvenil', idiom: 'Castellano', price: 52249, format: 'Tapa blanda', isbn: '9788413145204', description: 'Una historia de amor y pasión con una cuenta atrás. Todo acabará Antes de diciembre.', state: 'No disponible', ubication: 'España', publicationDate: '11/11/2021', editorial: 'MONTENA', pages: '689' },
+            { tittle: 'Boulevard', author: 'Flor Salvador', genre: 'Juvenil', idiom: 'Castellano', price: 75999, format: 'Tapa blanda', isbn: '9788419169181', description: 'Luke Howland, lleno de problemas y sumido en una desesperación profunda, y Hasley Weigel, tan despistada como optimista, no se ajustan al prototipo de pareja perfecta.', state: 'Disponible', ubication: 'España', publicationDate: '24/02/2022', editorial: 'MONTENA', pages: '360' },
+            //Metemos el resto de libros aqui
+        ];
+
+        function renderBooks() {
+            const bookList = document.getElementById('book-list');
+            bookList.innerHTML = '';
+            books.forEach((book, index) => {
+                const bookItem = document.createElement('li');
+                bookItem.className = 'book-item';
+                bookItem.innerHTML = `
+                    <h2>${book.tittle}</h2>
+                    <p><strong>Author:</strong> ${book.author}</p>
+                    <button class="edit-button" onclick="editBook(${index})">Edit</button>
+                `;
+                bookList.appendChild(bookItem);
+            });
+        }
+
+        function editBook(index) {
+            // Link para la pagina de editar
+            // V
+            window.location.href = `edit.html?index=${index}`;
+        }
+
+        // Renderiza la lista con los libros 
+        // V
+        document.addEventListener('DOMContentLoaded', renderBooks);
+    </script>
 </body>
 </html>
