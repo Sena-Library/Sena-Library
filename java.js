@@ -17,7 +17,7 @@ let books = [
     
     {tittle: 'Cómo hacer que te pasen cosas buenas', author: 'Marian Rojas', genre: 'Autoayuda', idiom: 'Castellano', price: 80749, format: 'Tapa blanda', isbn: '9788467053302', description: 'Uniendo el punto de vista científico, psicológico y humano, la autora nos ofrece una reflexión profunda, salpicada de útiles consejos y con vocación eminentemente didáctica, acerca de la aplicación de nuestras propias capacidades al empeño de procurarnos una existencia plena y feliz: conocer y optimizar determinadas zonas del cerebro, fijar metas y objetivos en la vida, ejercitar la voluntad, poner en marcha la inteligencia emocional, desarrollar la asertividad, evitar el exceso de autocrítica y autoexigencia, reivindicar el papel del optimismo…', state: 'Disponible', ubication: 'España', publicationDate: '09/10/2018', editorial: 'Espasa', pages: '232'},
     
-    {tittle: ' El infinito en un junco', author: 'Irene Vallejo', genre: 'Filología', idiom: 'Castellano', price: 140000, format: 'Tapa blanda', isbn: '9788417860790', description: 'Este  es un libro sobre la historia de los libros. Un recorrido por la vida  de ese fascinante artefacto que inventamos para que las palabras  pudieran viajar en el espacio y en el tiempo. La historia de su  fabricación, de todos los tipos que hemos ensayado a lo largo de casi  treinta siglos: libros de humo, de piedra, de arcilla, de juncos, de  seda, de piel, de árboles y, los últimos llegados, de plástico y luz.', state: 'No Disponible', ubication: 'LIBRERÍA Y DISTRIBUIDORA LERNER SAS', publicationDate: '10/10/2023', editorial: 'Siruela', pages: '452'},
+    {tittle: ' El infinito en un junco', author: 'Irene Vallejo', genre: 'Filología', idiom: 'Castellano', price: 140000, format: 'Tapa blanda', isbn: '9788417860790', description: 'Este  es un libro sobre la historia de los libros. Un recorrido por la vida  de ese fascinante artefacto que inventamos para que las palabras  pudieran viajar en el espacio y en el tiempo. La historia de su  fabricación, de todos los tipos que hemos ensayado a lo largo de casi  treinta siglos: libros de humo, de piedra, de arcilla, de juncos, de  seda, de piel, de árboles y, los últimos llegados, de plástico y luz.', state: 'No disponible', ubication: 'LIBRERÍA Y DISTRIBUIDORA LERNER SAS', publicationDate: '10/10/2023', editorial: 'Siruela', pages: '452'},
     
     {tittle: 'Los cuatro acuerdos', author: 'Miguel Ruiz', genre: 'Autoayuda', idiom: 'Castellano', price: 43699, format: 'Sin formato definido', isbn: '9788479532536', description: 'El conocimiento tolteca surge de la misma unidad esencial de la verdad de la que parten todas las tradiciones esotéricas sagradas del mundo. Aunque no es una religión, respeta a todos los maestros espirituales que han enseñado en la tierra, y si bien abraza el espíritu, resulta más preciso describirlo como una manera de vivir que se distingue por su fácil acceso a la felicidad y el amor.', state: 'Disponible', ubication: 'España', publicationDate: '23/10/1998', editorial: 'Urano', pages: '160'},
     
@@ -71,6 +71,12 @@ filterone.forEach((e) => {
         }else if (e.value === 'esp') {
             // Aplicar filtro por idioma
             filteredBooks = books.filter(value => value.idiom === 'Castellano');
+        }else if(e.value==='SD'){
+            filteredBooks = books.filter (value => value.state == 'Disponible')
+        }else if(e.value==='ND'){
+            filteredBooks = books.filter (value => value.state == 'No disponible')
+        }else if(e.value =='pag'){
+            filteredBooks = books.filter(value => value.pages > 200).sort((a, b) => b.pages - a.pages)
         }
     }
 });
@@ -240,6 +246,59 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if(categoriatwo ==='Editorial_Corimbo_S.L') {
                 const filterEditorialCorimbo = books.filter (value => value.editorial == 'Editorial Corimbo S.L.');
                 console.log(filterEditorialCorimbo)
+
+            } 
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filtrotrhee = document.getElementById('filtrotrhee');
+
+
+    filtrotrhee.addEventListener('change', () => {
+        const categoriatrhee = filtrotrhee.value;
+
+            if (categoriatrhee === 'todosG') {
+                console.log(books)
+            } else if(categoriatrhee ==='Infantil') {
+                const filtergenreInfantil = books.filter (value => value.genre == 'Infantil');
+                console.log(filtergenreInfantil)
+
+            } else if(categoriatrhee ==='Autoayuda') {
+                const filtergenreAutoayuda = books.filter (value => value.genre == 'Autoayuda');
+                console.log(filtergenreAutoayuda)
+
+            } else if(categoriatrhee ==='Historia') {
+                const filtergenreHistoria= books.filter (value => value.genre == 'Historia');
+                console.log(filtergenreHistoria)
+
+            } else if(categoriatrhee ==='Ficción') {
+                const filtergenreFicción = books.filter (value => value.genre == 'Ficción');
+                console.log(filtergenreFicción)
+
+            } else if(categoriatrhee ==='Salud') {
+                const filtergenreSalud = books.filter (value => value.genre == 'Salud');
+                console.log(filtergenreSalud)
+
+            } else if(categoriatrhee ==='Filología') {
+                const filtergenreFilología = books.filter (value => value.genre == 'Filología');
+                console.log(filtergenreFilología)
+
+            } else if(categoriatrhee ==='Juvenil') {
+                const filtergenreJuvenil = books.filter (value => value.genre == 'Juvenil');
+                console.log(filtergenreJuvenil)
+
+            } else if(categoriatrhee ==='Novela_contemporánea') {
+                const filtergenrecontemporánea = books.filter (value => value.genre == 'Novela contemporánea');
+                console.log(filtergenrecontemporánea)
+
+            } else if(categoriatrhee ==='Fantasía') {
+                const filtergenreFantasía = books.filter (value => value.genre == 'Fantasía');
+                console.log(filtergenreFantasía)
+
+            } else if(categoriatrhee ==='terror') {
+                const filtergenreterror = books.filter (value => value.genre == 'terror');
+                console.log(filtergenreterror)
 
             } 
     });
