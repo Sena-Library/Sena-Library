@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>Library</title>
+</head>
+<body id="body">
+    <header>
+      <nav id="menu">
+          <div>
+              <img src="assets/sena.png" alt="" class="logo_sena">
+          </div>
+          <div class="title">
+              <h1>
+                  LIBRERIA SENA
+              </h1>
+          </div>
+          <div id="opti">
+              <div class="opciones_links">
+                  <div class="logo_persona">
+                      <a href="templates/person.html" id="log"><img src="./assets/icono2.png" alt="" class="imagen_persona"></a>
+                  </div>
+                 <div class="opciones_a">
+                  <a href="templates/register.html" id="log">Registrarse</a>
+                  <a href="xxx.html" id="log">Agregar</a>
+                  <a href="templates/modify.html" id="log">Editar</a>
+                 </div>
+                 
+                  
+              </div>  
+              <div>
+                <input type="text" id="filterInput" placeholder="Buscar por título...">
+              </div>
+          </div>  
+      </nav>
+  </header>
+      <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./assets/image2-transformed.png" class="d-block w-100" alt="..." id="carrusel">
+              <div class="carousel-caption top-0 mt-4">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/image3 (1).png" class="d-block w-100" alt="..." id="carrusel">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/image4 (1).png" class="d-block w-100" alt="..." id="carrusel">
+            </div>
+          
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <main id="main">
+
+        <section class="secton_filtros">
+          <section>
+          <div class="div_idioma_disponibilidad">
+            <div>
+              <h2>IDIOMA</h2>
+              <div>
+                Español
+                <input type="checkbox" value="esp" id="filter2" class="valor">
+            </div>
+            
+            <div>
+              Ingles
+              <input type="checkbox" value="ing" id="filter2" class="valor">
+            </div>
+            </div>
+
+            <div>
+              <h2>DISPONIBLE</h2>
+              <div>
+                Disponible
+                <input type="checkbox" value="SD" id="filter2" class="valor">
+              </div>
+              <div>
+                No Disponible
+                <input type="checkbox" value="ND" id="filter2" class="valor">
+              </div>
+            </div>
+          </div>
+          
+        
+        
+        
+        
+        <div class="div_filtros">
+          <div>
+            <h2 class="subtitles">AUTORES</h2>
+        
+            <select id="filtro">
+                <option value="todos">Todos</option>
+                <option value="Mario_Ramos">Mario Ramos</option>
+                <option value="James_Clear">James Clear</option>
+                <option value="Robin_Sharma">Robin Sharma</option> 
+                <option value="Mario_Mendoza">Mario Mendoza</option> 
+                <option value="Isabel_Allende">Isabel Allende</option> 
+                <option value="Eckhart_Tolle">Eckhart Tolle</option> 
+                <option value="Carlos_Jaramillo">Carlos Jaramillo</option> 
+                <option value="Marian_Rojas">Marian Rojas</option> 
+                <option value="Irene_Vallejo">Irene Vallejo</option> 
+                <option value="Miguel_Ruiz">Miguel Ruiz</option> 
+                <option value="Gustavo_Petro">Gustavo Petro</option>
+                <option value="Flor_Salvador">Flor Salvador</option>
+                <option value="Joana_Marcus">Joana Marcus</option>
+                <option value="J.K._Rowlling">J.K. Rowlling</option>
+                <option value="Hector_Abad_Faciolince">Héctor Abad Faciolince</option>
+                <option value="Edgar_Allan_Poe">Edgar Allan Poe</option>
+                <option value="Antoine_de_Saint_Exupéry">Antoine de Saint Exupéry</option>
+                <option value="Santiago_Posteguillo">Santiago Posteguillo</option>
+                <option value="Dale_Carnegie">Dale Carnegie</option>
+            </select>
+          </div>
+          <div>
+            <h2 class="subtitles">GENEROS</h2>
+            <select id="filtrotrhee">
+              <option value="todosG">Todos</option>
+              <option value="Infantil">Infantil</option>
+              <option value="Autoayuda">Autoayuda</option>
+              <option value="Historia">Historia</option> 
+              <option value="Ficcion">Ficción</option> 
+              <option value="Salud">Salud</option> 
+              <option value="Filología">Filología</option> 
+              <option value="Juvenil">Juvenil</option> 
+              <option value="Novela_contemporánea">Novela contemporánea</option> 
+              <option value="Fantasía">Fantasía</option> 
+              <option value="terror">terror</option> 
+          </select>
+          </div>
+        </div>
+       
+        
+             <div class="div_precio_paginas">
+              <div>
+                <h2>PRECIO</h2>
+                <div>
+                  30.000 - 80.000
+                  <input type="checkbox" value="price" id="filter1" class="valor">
+              </div>
+              </div>
+              <div>
+                <h2>PAGINAS</h2>
+                <div>
+                  MAS DE 200
+                  <input type="checkbox" value="pag" id="filter2" class="valor">
+              </div>
+              </div>
+             </div>
+             
+        
+        
+        
+          <h2 class="subtitles">EDITORIAL</h2>
+        
+          <select id="filtrotwo">
+            <option value="todosE">Todos</option>
+            <option value="B_de_Bolsillo">B de Bolsillo</option>
+            <option value="Editorial_Alma">Editorial Alma</option>
+            <option value="ALFAGUARA">ALFAGUARA</option> 
+            <option value="Salamandra">Salamandra</option> 
+            <option value="MONTENA">MONTENA</option> 
+            <option value="Urano">Urano</option> 
+            <option value="Espasa">Espasa</option> 
+            <option value="Booket">Booket</option> 
+            <option value="Gaia_Ediciones">Gaia Ediciones</option> 
+            <option value="Ballantine_Books">Ballantine Books</option>
+            <option value="Planeta_Colombia">Planeta Colombia</option>
+            <option value="GRIJALBO">GRIJALBO</option>
+            <option value="PAIDOS">PAIDOS</option>
+            <option value="Editorial_Corimbo_S.L">Editorial Corimbo S.L</option>
+        </select>
+        <div class="botones_filtros">
+          <div>
+            <button class="boton_check" value="" id="buton">Buscar</button>
+          </div>
+          <div>
+            <button value="" id="returnn" onclick="relo()">Reiniciar</button>
+          </div>
+        </div>
+      </section>
+        
+        <section>
+        
+          <div id="content_books">
+        
+        
+          </div>
+          
+        </section>
+        
+        </section>
+       
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+
+  </main>
+  <script src="app.js" type="module"></script>
+<script src="xxx.js" type="module"></script>
+
+</body>
+</html>

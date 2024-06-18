@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar contenido a localStorage</title>
+</head>
+<body>
+  <h2>Agregar contenido</h2>
+  <form id="myForm">
+    <label for="author">Autor:</label>
+    <input type="text" id="author" required>
+    <label for="tittle">Titulo</label>
+    <input type="text" id="tittle" required>
+    <label for="gener">Genero</label>
+    <select name="" id="gener" required>
+        <option value="">Generos</option>
+        <option value="Ficcion">Ficcion</option>
+        <option value="Infantil">Infantil</option>
+        <option value="Autoayuda">Autoayuda</option>
+        <option value="Historia">Historia</option>
+        <option value="Salud">Salud</option>
+        <option value="Filología">Filología</option>
+        <option value="Juvenil">Juvenil</option>
+        <option value="Novela contemporánea">Novela contemporánea</option>
+        <option value="Fantasía">Fantasía</option>
+        <option value="Terror">Terror</option>
+        <option value="Otro">Otro</option>
+    </select>
+
+    <label for="image">Imagen:</label>
+    <input type="file" accept=".png, .jpg, .jpeg, .webp, .heic, .heif" id="image" required >
+
+    <label for="lenguague">Idiomas</label>
+    <select name="" id="lenguague" required>
+        <option value="">Idiomas</option>
+        <option value="Ingles">Ingles</option>
+        <option value="Español">Español</option>
+        <option value="Otro">Otro</option>
+    </select>
+
+    <label for="price">Precio</label>
+    <input type="number" name="" id="price" required>
+
+    <label for="format">Formato</label>
+    <select name="" id="format" required>
+        <option value="">Formato</option>
+        <option value="Tapa Dura">Tapa Dura</option>
+        <option value="Tapa Blanda">Tapa Blanda</option>
+        <option value="Sin formato definido">Sin formato definido</option>
+    </select>
+
+    <label for="isbn">Isbn</label>
+    <input type="number" name="" id="isbn" required>
+
+    <label for="description">descripcion</label>
+    <input type="text" id="description" required>
+
+    <label for="state">Estado</label>
+    <select name="" id="state" required>
+        <option value="">Estado</option>
+        <option value="Disponible">Disponible</option>
+        <option value="No disponible">No disponible</option>
+    </select>
+
+    <label for="ubication">Ubicacion</label>
+    <input type="text" id="ubication" required> 
+
+    <label for="publicate">Fecha Publicacion</label>
+    <input type="date" name="" id="publicate" required>
+    <button type="submit">Agregar</button>
+
+    <label for="editorial">Editorial</label>
+    <select name="" id="editorial" required>
+        <option value="">Editorial</option>
+        <option value="B de Bolsillo">B de Bolsillo</option>
+        <option value="Editorial Alma">Editorial Alma</option>
+        <option value="ALFAGUARA">ALFAGUARA</option>
+        <option value="Salamandra">Salamandra</option>
+        <option value="MONTENA">MONTENA</option>
+        <option value="Urano">Urano</option>
+        <option value="Espasa">Espasa</option>
+        <option value="Booket">Booket</option>
+        <option value="Gaia Ediciones">Gaia Ediciones</option>
+        <option value="Ballantine Books">Ballantine Books</option>
+        <option value="Planeta Colombia">Planeta Colombia</option>
+        <option value="GRIJALBO">GRIJALBO</option>
+        <option value="PAIDOS">PAIDOS</option>
+        <option value="Editorial Corimbo S.L">Editorial Corimbo S.L</option>
+        <option value="Otros">Otros</option>
+    </select>
+
+    <label for="pags">Paginas</label>
+    <input type="number" name="" id="pags" required>
+  </form>
+
+  <div id="contenido-list"></div>
+<script src="xxx.js" type="module"></script>
+</body>
+</html>
