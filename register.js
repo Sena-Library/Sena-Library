@@ -3,7 +3,7 @@ function register() {
     let tel = document.getElementById("telefono").value;
     let direcc = document.getElementById("direccion").value;
     let password = document.getElementById("contraseña").value;
-   
+
     if (name === "" || tel === "" || direcc === "" || password === "") {
         alert("Por favor, rellene todos los campos");
     } else {

@@ -5,8 +5,7 @@ const rel = document.getElementById('returnn')
 function relo(){
     window.location.reload()
 }
-const discountDates = ['2024-05-17', '2024-12-25'];
-
+const discountDates = ['2024-06-18', '2024-12-25'];
 let books = [
     {tittle: 'EL MAS LISTO', author: 'Mario Ramos', genre: 'Infantil', idiom: 'Castellano', price: 78000 , format: 'Sin formato definido', isbn: '9788484704447', description: '¡Yo soy el lobo feroz! -¡Soy el más listo! Hoy será día de festín- ríe maliciosamente el lobo. De menú: Abuelita. Y pequeña frambuesa, de postre. Al llegar a casa de la abuelita, el lobo llama a la puerta: toc, toc, toc. No hay nadie. Solamente un camisón de dormir sobre la cama. El lobo se lo pone y sale para borrar sus huellas delante de la casa. ¡Plam! Una corriente de aire cierra la puerta. El lobo, sorprendido, corre a esconderse en el bosque disfrazado de abuelita...', state: 'Disponible', ubication: 'LIBRERÍA Y DISTRIBUIDORA LERNER SAS', publicationDate: '01/04/2012', editorial: 'Editorial Corimbo S.L.', pages: 48, stock: 19, img: 'assets/06.jpg'},
   
@@ -65,8 +64,8 @@ function makeBooks(books) {
     createBook(element);
   });
 }
-
-function createBook(book) {
+import {register} from "./register";
+  function createBook(book) {
   const cardBook = document.createElement('div');
   cardBook.classList.add('book');
 
@@ -78,8 +77,32 @@ function createBook(book) {
   <p><strong>Idioma:</strong> ${book.idiom}</p>
   <p><strong>Precio:</strong> $${book.price}</p>
   <p><strong>Estado:</strong> ${book.state}</p>`;
+
+  const btn = document.createElement('button')
+  btn.innerText='Comprar'
+  btn.classList.add(book.isbn)
+
+
   container.appendChild(cardBook);
+  cardBook.appendChild(btn);
+  
+  btn.addEventListener('click',function(){
+
+    const isbn = btn.classList.value; // Ajusta esto según cómo almacenes el ISBN en la clase
+    const libroSeleccionado = books.find(book => book.isbn === isbn);
+  if(register()===true){
+    if (libroSeleccionado) {
+      localStorage.setItem('libroSeleccionado', JSON.stringify(libroSeleccionado));
+      window.location.href = 'templates/modify.html';
+  }}else{
+    alert("Registrate para comprar")
+  }})
+
+
 }
+
+
+
 
 let button = document.getElementById('buton');
 let filterone = document.querySelectorAll('.valor');
