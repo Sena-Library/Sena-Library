@@ -8,7 +8,7 @@ const container = document.getElementById('content_books');
    
 
 const discountDates = ['2024-06-18', '2024-12-25'];
-let books = [
+ export let books = [
     {tittle: 'EL MAS LISTO', author: 'Mario Ramos', genre: 'Infantil', idiom: 'Castellano', price: 78000 , format: 'Sin formato definido', isbn: '9788484704447', description: '¡Yo soy el lobo feroz! -¡Soy el más listo! Hoy será día de festín- ríe maliciosamente el lobo. De menú: Abuelita. Y pequeña frambuesa, de postre. Al llegar a casa de la abuelita, el lobo llama a la puerta: toc, toc, toc. No hay nadie. Solamente un camisón de dormir sobre la cama. El lobo se lo pone y sale para borrar sus huellas delante de la casa. ¡Plam! Una corriente de aire cierra la puerta. El lobo, sorprendido, corre a esconderse en el bosque disfrazado de abuelita...', state: 'Disponible', ubication: 'LIBRERÍA Y DISTRIBUIDORA LERNER SAS', publicationDate: '01/04/2012', editorial: 'Editorial Corimbo S.L.', pages: 48, stock: 19, img: 'assets/06.jpg'},
   
       {tittle: 'HABITOS ATOMICOS', author: 'James Clear', genre: 'Autoayuda', idiom: 'Castellano', price: 79000 , format: 'Sin formato definido', isbn: '9789584277954', description: '“Hábitos Atómicos” es un libro escrito por James Clear, un experto en formación de hábitos y autor del bestseller número 1 del New York Times. En este libro, Clear explora cómo los hábitos pueden ser el secreto para lograr el éxito y mejorar nuestra vida en general.', state: 'Disponible', ubication: 'LIBRERÍA Y DISTRIBUIDORA LERNER SAS', publicationDate: '08/09/2020', editorial: 'PAIDOS', pages: 323, stock: 8, img: 'assets/11.png'},
@@ -86,10 +86,13 @@ import {isUserRegistered} from "./register.js";
   btn.innerText='Comprar'
   btn.classList.add(book.isbn)
 
-
+  const edit = document.createElement('button')
+  edit.innerText='Editar'
+  edit.classList.add(book.isbn)
+  
   container.appendChild(cardBook);
   cardBook.appendChild(btn);
-  
+  cardBook.appendChild(edit)
   btn.addEventListener('click',function(){
 
     const isbn = btn.classList.value; // Ajusta esto según cómo almacenes el ISBN en la clase
@@ -102,6 +105,17 @@ import {isUserRegistered} from "./register.js";
     alert("Registrate para comprar")
   }})
 
+  edit.addEventListener('click',function(){
+    const isbn2 = edit.classList.value;
+    const libroSeleccionado2 = books.find(book => book.isbn === isbn2);
+    if(isUserRegistered()){
+      if (libroSeleccionado2) {
+        localStorage.setItem('libroSeleccionado', JSON.stringify(libroSeleccionado2));
+        window.location.href = 'templates/modify.html';
+    }}else{
+      alert("Registrate para Editar")
+    }}
+  )
 
 }
 

@@ -37,36 +37,61 @@
             </h2>
         </div>
         <form id="edit-book-form">
-            <label for="tittle">Titulo</label>
-            <input type="text" id="tittle" name="tittle" class="inputs_editar">
+          
     
-            <label for="author">Autor</label>
-            <input type="text" id="author" name="author" class="inputs_editar">
     
             <label for="genre">Genero</label>
-            <input type="text" id="genre" name="genre" class="inputs_editar">
+
     
-            <label for="idiom">Idioma</label>
-            <input type="text" id="idiom" name="idiom" class="inputs_editar">
-    
+            <select id="genre">
+                <option value="todosG">Todos</option>
+                <option value="Infantil">Infantil</option>
+                <option value="Autoayuda">Autoayuda</option>
+                <option value="Historia">Historia</option> 
+                <option value="Ficcion">Ficción</option> 
+                <option value="Salud">Salud</option> 
+                <option value="Filología">Filología</option> 
+                <option value="Juvenil">Juvenil</option> 
+                <option value="Novela_contemporánea">Novela contemporánea</option> 
+                <option value="Fantasía">Fantasía</option> 
+                <option value="terror">terror</option> 
+            </select>
             <label for="price">Precio</label>
             <input type="number" id="price" name="price" class="inputs_editar">
     
     
             <label for="description">Descripcion</label>
             <textarea id="description" name="description"></textarea>
+            <h2>
+                Editorial
+            </h2>
 
+            <select id="edi">
+                <option value="todosE">Todos</option>
+                <option value="B_de_Bolsillo">B de Bolsillo</option>
+                <option value="Editorial_Alma">Editorial Alma</option>
+                <option value="ALFAGUARA">ALFAGUARA</option> 
+                <option value="Salamandra">Salamandra</option> 
+                <option value="MONTENA">MONTENA</option> 
+                <option value="Urano">Urano</option> 
+                <option value="Espasa">Espasa</option> 
+                <option value="Booket">Booket</option> 
+                <option value="Gaia_Ediciones">Gaia Ediciones</option> 
+                <option value="Ballantine_Books">Ballantine Books</option>
+                <option value="Planeta_Colombia">Planeta Colombia</option>
+                <option value="GRIJALBO">GRIJALBO</option>
+                <option value="PAIDOS">PAIDOS</option>
+                <option value="Editorial_Corimbo_S.L">Editorial Corimbo S.L</option>
+            </select>
     
-            <label for="editorial">Editorial</label>
-            <input type="text" id="editorial" name="editorial" class="inputs_editar">
-    
-            <label for="pages">Pages</label>
-            <input type="text" id="pages" name="pages" class="inputs_editar">
-    
-            <button type="submit" class="save_boton">Guardar</button>
+            <button type="submit" class="save_boton" id='saveEdit'>Guardar</button>
         </form>
     
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../modify.js" type="module">
+        import {books} from "./app.js"
+    </script>
+    <script src="../app.js" type="module"></script>
 </body>
 </html>
