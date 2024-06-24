@@ -8,7 +8,10 @@ const container = document.getElementById('content_books');
    
 
 const discountDates = ['2024-06-18', '2024-12-25'];
- export let books = [
+if (!localStorage.getItem('books')) {
+
+
+ let books = [
     {tittle: 'EL MAS LISTO', author: 'Mario Ramos', genre: 'Infantil', idiom: 'Castellano', price: 78000 , format: 'Sin formato definido', isbn: '9788484704447', description: '¡Yo soy el lobo feroz! -¡Soy el más listo! Hoy será día de festín- ríe maliciosamente el lobo. De menú: Abuelita. Y pequeña frambuesa, de postre. Al llegar a casa de la abuelita, el lobo llama a la puerta: toc, toc, toc. No hay nadie. Solamente un camisón de dormir sobre la cama. El lobo se lo pone y sale para borrar sus huellas delante de la casa. ¡Plam! Una corriente de aire cierra la puerta. El lobo, sorprendido, corre a esconderse en el bosque disfrazado de abuelita...', state: 'Disponible', ubication: 'LIBRERÍA Y DISTRIBUIDORA LERNER SAS', publicationDate: '01/04/2012', editorial: 'Editorial Corimbo S.L.', pages: 48, stock: 19, img: 'assets/06.jpg'},
   
       {tittle: 'HABITOS ATOMICOS', author: 'James Clear', genre: 'Autoayuda', idiom: 'Castellano', price: 79000 , format: 'Sin formato definido', isbn: '9789584277954', description: '“Hábitos Atómicos” es un libro escrito por James Clear, un experto en formación de hábitos y autor del bestseller número 1 del New York Times. En este libro, Clear explora cómo los hábitos pueden ser el secreto para lograr el éxito y mejorar nuestra vida en general.', state: 'Disponible', ubication: 'LIBRERÍA Y DISTRIBUIDORA LERNER SAS', publicationDate: '08/09/2020', editorial: 'PAIDOS', pages: 323, stock: 8, img: 'assets/11.png'},
@@ -49,6 +52,10 @@ const discountDates = ['2024-06-18', '2024-12-25'];
   
       {tittle: 'Cómo ganar amigos e influir sobre las personas', author: 'Dale Carnegie', genre: 'Autoayuda', idiom: 'Castellano', price: 40000, format: 'Tapa blanda', isbn: '9781644730096', description: 'Dale Carnegie escribió este libro con el propósito de ser un suplemento a su curso sobre oratoria y relaciones humanas y nunca se imaginó que se convertiría en un éxito de ventas y que la gente lo leería, lo criticaría y viviría según sus reglas. Carnegie entrevistó a muchas personas de renombre para tomar ejemplos de sus vidas. Entre ellas están Edison, Franklin D. Rooselvelt y James Farley.', state: 'Disponible', ubication: 'LIBRERÍA Y DISTRIBUIDORA LERNER SAS', publicationDate: '23 Abril 2019', editorial: 'B de Bolsillo', pages: 304, stock: 12, img: 'assets/04.png'},
   ]
+  localStorage.setItem('books', JSON.stringify(books));
+}
+
+
   function applyDiscount(books) {
     const today = new Date().toISOString().split('T')[0];
     if (discountDates.includes(today)) {
@@ -105,17 +112,19 @@ import {isUserRegistered} from "./register.js";
     alert("Registrate para comprar")
   }})
 
-  edit.addEventListener('click',function(){
-    const isbn2 = edit.classList.value;
-    const libroSeleccionado2 = books.find(book => book.isbn === isbn2);
-    if(isUserRegistered()){
-      if (libroSeleccionado2) {
-        localStorage.setItem('libroSeleccionado', JSON.stringify(libroSeleccionado2));
-        window.location.href = 'templates/modify.html';
-    }}else{
-      alert("Registrate para Editar")
-    }}
-  )
+  edit.addEventListener('click', function() {
+    const isbn = edit.classList.value; // Ajusta esto según cómo almacenes el ISBN en la clase
+    const libroSeleccionado = books.find(book => book.isbn === isbn);
+
+    if (isUserRegistered()) {
+        if (libroSeleccionado) {
+            localStorage.setItem('libroSeleccionado', JSON.stringify(libroSeleccionado));
+            window.location.href = 'templates/modify.html'; // Redirigir a la página de edición
+        }
+    } else {
+        alert("Regístrate para Editar");
+    }
+});
 
 }
 

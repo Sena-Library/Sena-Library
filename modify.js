@@ -1,46 +1,55 @@
-import { books } from './app.js';
+// EditBooks.js
 
-document.addEventListener('DOMContentLoaded', function() {
-    const gen = document.getElementById('genre');
-    const price = document.getElementById('price');
-    const des = document.getElementById('description');
-    const edi = document.getElementById('edi');
-    const btnedit = document.getElementById('saveEdit');
+function updateBookInLocalStorage(updatedBook) {
+    let books = JSON.parse(localStorage.getItem('books'));
 
-    if (btnedit) {
-        btnedit.addEventListener('click', function(event) {
-            event.preventDefault();
+    if (!books) {
+        books = [];
+    }
 
-            // Obtener el libro seleccionado desde localStorage
-            const libroSeleccionado = JSON.parse(localStorage.getItem('libroSeleccionado'));
+    const index = books.findIndex(book => book.isbn === updatedBook.isbn);
 
-            if (libroSeleccionado) {
-                // Actualizar los valores del libro seleccionado
-                libroSeleccionado.genre = gen.value;
-                libroSeleccionado.price = price.value;
-                libroSeleccionado.description = des.value;
-                libroSeleccionado.editorial = edi.value;
+    if (index !== -1) {
+        books[index] = updatedBook;
+        localStorage.setItem('books', JSON.stringify(books));
+        alert('¡Libro actualizado correctamente!');
+    } else {
+        console.error('No se encontró el libro en el localStorage.');
+    }
+}
 
-                // Buscar el índice del libro seleccionado en la lista de libros
-                const index = books.findIndex(book => book.isbn === libroSeleccionado.isbn);
-                if (index !== -1) {
-                    // Actualizar el libro en la lista de libros
-                    books[index] = libroSeleccionado;
+function changes() {
+    const libroSeleccionado = JSON.parse(localStorage.getItem('libroSeleccionado'));
+    if (libroSeleccionado) {
+        document.getElementById('isbn').value = libroSeleccionado.isbn;
+        document.getElementById('title').value = libroSeleccionado.tittle;
+        document.getElementById('author').value = libroSeleccionado.author;
+        document.getElementById('genre').value = libroSeleccionado.genre;
+        document.getElementById('price').value = libroSeleccionado.price;
+        document.getElementById('state').value = libroSeleccionado.state;
+        document.getElementById('editorial').value = libroSeleccionado.editorial;
 
-                    // Guardar la lista de libros actualizada en localStorage
-                    localStorage.setItem('libroSeleccionado', JSON.stringify(libroSeleccionado));
+        const saveChangesBtn = document.getElementById('save-changes');
+        saveChangesBtn.addEventListener('click', function () {
+            const updatedBook = {
+                isbn: document.getElementById('isbn').value,
+                tittle: document.getElementById('title').value,
+                author: document.getElementById('author').value,
+                genre: document.getElementById('genre').value,
+                price: parseFloat(document.getElementById('price').value),
+                state: document.getElementById('state').value,
+                img:libroSeleccionado.img
+            };
 
-                    console.log('Libro actualizado:', libroSeleccionado);
+            updateBookInLocalStorage(updatedBook);
 
-                    window.location.href='../index.html'
-                } else {
-                    console.error('No se encontró el libro en la lista de libros');
-                }
-            } else {
-                console.error('No se ha seleccionado ningún libro');
-            }
+            // Redirigir de vuelta a la página principal u otra página de gestión
+            window.location.href = '../index.html';
+
         });
     } else {
-        console.error('Elemento con ID "saveEdit" no encontrado');
+        console.error('No se ha seleccionado ningún libro para editar.');
     }
-});
+}
+
+document.addEventListener('DOMContentLoaded', changes);
