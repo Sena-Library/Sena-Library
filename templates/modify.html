@@ -1,72 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Registrarse</title>
+    <title>Editar Libro</title>
 </head>
 <body>
     <header>
         <nav id="menu">
             <div>
-                <img src="../assets/sena.png" alt="" class="logo_sena">
+                <img src="../assets/fondo_sena2.png" alt="" class="logo_sena2">
             </div>
             <div class="title">
-                <h1>
-                    LIBRERIA SENA
-                </h1>
+                
             </div>
-            <div id="opti">
-                <div class="opciones_links">
-                    <a href="register.html" id="log">Register</a>
-                    <a href="add.html" id="log">Agregar</a>
-                    <a href="modify.html" id="log">Editar</a>
-                </div>  
-                <div>
-                    <input type="search"  id="searchh" placeholder="Buscador">
-                </div>
-            </div>  
+             
         </nav>
     </header>
-    <main>
-        <div class="edit">
-            <h2>
-                EDITAR LIBROS
-            </h2>
-        </div>
-        <form id="edit-book-form">
-            <label for="tittle">Titulo</label>
-            <input type="text" id="tittle" name="tittle" class="inputs_editar">
     
-            <label for="author">Autor</label>
-            <input type="text" id="author" name="author" class="inputs_editar">
-    
-            <label for="genre">Genero</label>
-            <input type="text" id="genre" name="genre" class="inputs_editar">
-    
-            <label for="idiom">Idioma</label>
-            <input type="text" id="idiom" name="idiom" class="inputs_editar">
-    
-            <label for="price">Precio</label>
-            <input type="number" id="price" name="price" class="inputs_editar">
-    
-    
-            <label for="description">Descripcion</label>
-            <textarea id="description" name="description"></textarea>
+    <form id="edit-form">
+        <h1>!!EDITAR LIBROS!!</h1>
 
-    
-            <label for="editorial">Editorial</label>
-            <input type="text" id="editorial" name="editorial" class="inputs_editar">
-    
-            <label for="pages">Pages</label>
-            <input type="text" id="pages" name="pages" class="inputs_editar">
-    
-            <button type="submit" class="save_boton">Guardar</button>
-        </form>
-    
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <label for="title">Título:</label>
+        <input type="text" id="title" name="title">
+
+       <label for="">Autores</label>
+            <select id="author">
+                <option value="Mario Ramos">Mario Ramos</option>
+                <option value="James Clear">James Clear</option>
+                <option value="Robin Sharma">Robin Sharma</option> 
+                <option value="Mario Mendoza">Mario Mendoza</option> 
+                <option value="Isabel Allende">Isabel Allende</option> 
+                <option value="Eckhart Tolle">Eckhart Tolle</option> 
+                <option value="Carlos Jaramillo">Carlos Jaramillo</option> 
+                <option value="Marian Rojas">Marian Rojas</option> 
+                <option value="Irene Vallejo">Irene Vallejo</option> 
+                <option value="Miguel Ruiz">Miguel Ruiz</option> 
+                <option value="Gustavo Petro">Gustavo Petro</option>
+                <option value="Flor Salvador">Flor Salvador</option>
+                <option value="Joana Marcus">Joana Marcus</option>
+                <option value="J.K. Rowlling">J.K. Rowlling</option>
+                <option value="Hector Abad_Faciolince">Héctor Abad Faciolince</option>
+                <option value="Edgar Allan_Poe">Edgar Allan Poe</option>
+                <option value="Antoine de Saint_Exupéry">Antoine de Saint Exupéry</option>
+                <option value="Santiago Posteguillo">Santiago Posteguillo</option>
+                <option value="Dale Carnegie">Dale Carnegie</option>
+            </select>
+        <label for="idiom">Idioma:</label>
+        <select id="idiom">
+            <option value="Castellano">Castellano</option>
+            <option value="Ingles">Ingles</option>
+             <option value="otro">otro</option> 
+        </select>
+        
+
+        <label for="editorial">Editorial:</label>
+        <select id="editorial">
+            <option value="B_de_Bolsillo">B de Bolsillo</option>
+            <option value="Editorial_Alma">Editorial Alma</option>
+            <option value="ALFAGUARA">ALFAGUARA</option> 
+            <option value="Salamandra">Salamandra</option> 
+            <option value="MONTENA">MONTENA</option> 
+            <option value="Urano">Urano</option> 
+            <option value="Espasa">Espasa</option> 
+            <option value="Booket">Booket</option> 
+            <option value="Gaia_Ediciones">Gaia Ediciones</option> 
+            <option value="Ballantine_Books">Ballantine Books</option>
+            <option value="Planeta_Colombia">Planeta Colombia</option>
+            <option value="GRIJALBO">GRIJALBO</option>
+            <option value="PAIDOS">PAIDOS</option>
+            <option value="Editorial_Corimbo_S.L">Editorial Corimbo S.L</option>
+             <option value="otro">otro</option> 
+        </select>
+        
+            <label for="">Genero</label>
+        <select id="genre">
+          <option value="Infantil">Infantil</option>
+          <option value="Autoayuda">Autoayuda</option>
+          <option value="Historia">Historia</option> 
+          <option value="Ficcion">Ficción</option> 
+          <option value="Salud">Salud</option> 
+          <option value="Filología">Filología</option> 
+          <option value="Juvenil">Juvenil</option> 
+          <option value="Novela_contemporánea">Novela contemporánea</option> 
+          <option value="Fantasía">Fantasía</option> 
+          <option value="terror">terror</option>
+          <option value="otro">otro</option> 
+
+      </select>
+
+        <label for="price">Precio:</label>
+        <input type="number" id="price" name="price">
+
+        <label for="price">Stock:</label>
+        <input type="number" id="stock" name="stock">
+
+        <label for="state">Estado:</label>
+        <select id="state" name="state">
+            <option value="Disponible">Disponible</option>
+            <option value="No disponible">No disponible</option>
+        </select>
+
+        <button type="button" id="save-changes">Guardar cambios</button>
+    </form>
+    <footer>
+        <p>Pagina realizada por Michael Steven - Santiago Bustos - Camilo Duran - Santiago Aguirre</p>
+      </footer>
+    <script src="../modify.js" type="module"></script>
 </body>
 </html>
