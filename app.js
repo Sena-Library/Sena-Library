@@ -163,7 +163,7 @@ function createBook(book) {
      if(isUserRegistered()){
     if (libroSeleccionado) {
       localStorage.setItem('libroSeleccionado', JSON.stringify(libroSeleccionado));
-      window.location.href = 'templates/person.html';
+      window.location.href = '';
   }}else{
     alert("Registrate para comprar")
   }})
